@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-family: Montserrat,sans-serif;
+    @apply mb-2 text-4xl font-extrabold sm:text-3xl lg:text-5xl
+}
+.card-title {
+    font-family: Montserrat,sans-serif;
+    @apply font-semibold
+}

@@ -24,7 +24,7 @@
          <server name="DB_CONNECTION" value="mysql"/>
          <server name="DB_DATABASE" value="shop_test"/>
         <server name="DB_HOST" value="localhost"/>
-        <server name="DB_PORT" value="8889"/>
+        <server name="DB_PORT" value="3306"/>
          <server name="DB_USER" value="root"/>
          <server name="DB_PASSWORD" value="root"/>
         <server name="MAIL_MAILER" value="array"/>

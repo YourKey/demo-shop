@@ -20,7 +20,8 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('material');
             $table->unsignedDecimal('weight');
-            $table->json('dimensions');
+            $table->unsignedBigInteger('width');
+            $table->unsignedBigInteger('length');
         });
     }
 

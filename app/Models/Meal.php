@@ -10,6 +10,11 @@ class Meal extends Model
 {
     use HasFactory;
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function products(): belongsToMany
     {
         return $this->belongsToMany(Product::class);

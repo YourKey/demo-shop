@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+Route::post('cart', [\App\Http\Controllers\CartController::class, 'index'])->name('cart.index');

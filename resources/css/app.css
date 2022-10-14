@@ -12,3 +12,6 @@ h1 {
     font-family: Montserrat,sans-serif;
     @apply font-semibold
 }
+.card figure img {
+    width: inherit;
+}

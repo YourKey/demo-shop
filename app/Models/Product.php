@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Filters\Filters;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,9 +13,18 @@ class Product extends Model
 {
     use HasFactory;
 
+
     protected array $casts = [
-        'dimensions' => 'json',
+        'weight' => 'float',
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+    public int $amount = 1;
+
 
     public function meals(): belongsToMany
     {
@@ -24,4 +35,15 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function scopeFiltered(Builder $query): Builder
+    {
+        foreach (app(Filters::class)->all() as $filter) {
+            $query = $filter->apply($query);
+        }
+
+        return $query;
+    }
+
+
 }

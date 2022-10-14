@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Filters\Filters;
+use Illuminate\Contracts\View\View;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        $products = Product::with(['category', 'meals'])
-            ->paginate(30);
-        return view('layouts.app', compact('products'));
+        $filters = app(Filters::class)->all();
+
+        return view('products.index', compact('filters'));
     }
 }

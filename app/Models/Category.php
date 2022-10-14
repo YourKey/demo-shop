@@ -10,6 +10,11 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function products(): hasMany
     {
         return $this->hasMany(Product::class);

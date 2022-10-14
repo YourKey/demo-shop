@@ -26,10 +26,8 @@ class ProductFactory extends Factory
             'category_id' => Category::inRandomOrder()->first()->id,
             'material' => $random_product['material'],
             'weight' => $this->faker->randomFloat('3', '0.01', '1'),
-            'dimensions' => [
-                'length' => $this->faker->numberBetween('10', '100'),
-                'width' => $this->faker->numberBetween('10', '100'),
-            ],
+            'length' => $this->faker->numberBetween('10', '100'),
+            'width' => $this->faker->numberBetween('10', '100'),
         ];
     }
 }

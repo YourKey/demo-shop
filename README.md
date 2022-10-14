@@ -3,17 +3,18 @@
 ![Главная страница](img.png)
 
 ![Корзина](img_1.png)
-Backend: Laravel ^8.75.
+
+Backend: Laravel ^8.75, PHP 8.0
 
 Frontend:
 Tailwind CSS 3,
 Daisy UI,
 Vue 3,
-Vuex + LocalStorage.
+Vuex + LocalStorage
 
 ## Установка
 ```
-composer create-project yourkey/demo-shop
+composer create-project shop/shop
 ```
 
 Запустить миграции и заполнить тестовыми данными:

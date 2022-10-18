@@ -24,12 +24,14 @@ class CartService {
 
     private function extractIds($products): array
     {
-        $ids['with_amount'] = collect($products)->pluck('amount', 'id')->map(function($value, $key) {
-            return intval($value, $key);
+        $ids['with_amount'] = collect($products)->pluck('amount', 'id')
+            ->filter(function($value, $key) {
+                return (
+                    is_int($value) && $value > 0
+                    && is_int($key) && $key > 0
+                );
         });
-        $ids['all'] = $ids['with_amount']->keys()->map(function($value) {
-            return intval($value);
-        });
+        $ids['all'] = $ids['with_amount']->keys();
         return $ids;
     }
 
